@@ -1,4 +1,8 @@
-# qdds [![Updates](https://pyup.io/repos/github/benmcnelly/qdds/shield.svg)](https://pyup.io/repos/github/benmcnelly/qdds/) [![Python 3](https://pyup.io/repos/github/benmcnelly/qdds/python-3-shield.svg)](https://pyup.io/repos/github/benmcnelly/qdds/)
+# qdds
+
+[![PyPI version](https://badge.fury.io/py/qdds.svg)](https://badge.fury.io/py/qdds)
+[![Updates](https://pyup.io/repos/github/benmcnelly/qdds/shield.svg)](https://pyup.io/repos/github/benmcnelly/qdds/)
+[![Python 3](https://pyup.io/repos/github/benmcnelly/qdds/python-3-shield.svg)](https://pyup.io/repos/github/benmcnelly/qdds/)
 
 Quick Django Dev Server using [Click](https://github.com/pallets/click)
 
