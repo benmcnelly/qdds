@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='qdds',
-    version='1.1.1',
+    version='1.1.2',
     description='Quick Django Dev Server shortcut using your IP and port 8000',
     author = 'benmcnelly',
     author_email = 'me@benmcnelly.com',
