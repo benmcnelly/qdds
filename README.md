@@ -6,7 +6,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/benmcnelly/qdds.svg)](https://github.com/benmcnelly/qdds/issues)
 [![](https://img.shields.io/badge/badger-approved-ff69b4.svg)](https://www.youtube.com/watch?v=EIyixC9NsLI)
 
-Quick Django Dev Server using [Click](https://github.com/pallets/click)
+## Quick Django Dev Server
 
 Install:
 
