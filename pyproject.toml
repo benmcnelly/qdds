@@ -1,0 +1,18 @@
+[project]
+name = "qdds"
+version = "1.2.0"
+description = "Quick Django Dev Server shortcut using your IP and port 8000"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+  { name="Ben McNelly", email="me@benmcnelly.com" }
+]
+dependencies = ["click>=8.1"]
+
+[project.scripts]
+devserver = "qdds.cli:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
