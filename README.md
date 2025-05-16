@@ -9,11 +9,16 @@
   <a href="https://pyup.io/repos/github/benmcnelly/qdds/"><img src="https://pyup.io/repos/github/benmcnelly/qdds/shield.svg" alt="Updates"></a>
   <a href="https://www.youtube.com/watch?v=EIyixC9NsLI"><img src="https://img.shields.io/badge/badger-approved-ff69b4.svg" alt="badger approved"></a>
 </p>
+
 ---
 
 ## 🚀 What is qdds?
 
 **qdds** (`devserver`) is a small CLI tool that runs your Django project's dev server using your local network IP, making it accessible to other devices on your Wi-Fi. Great for testing on mobile or with a team.
+
+By default, it runs on **port 80**, so other devices on your network can just enter your IP address (like `http://192.168.1.50`) without needing a port number. 🔥
+
+If that fails due to permissions or port binding restrictions, you can pass `--safe` to fall back to Django's default port 8000.
 
 ---
 
@@ -33,23 +38,28 @@ Inside your Django project folder (where `manage.py` lives):
 devserver
 ```
 
-This is equivalent to:
+This runs:
 
 ```bash
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:80
 ```
 
-If a network IP is available, qdds will also open it in your browser automatically.
+That means devices on your Wi-Fi can hit `http://<your-ip>` with no port required.
+
+If you get a permission error or want to play it safe:
+
+```bash
+devserver --safe
+```
+
+This runs it on port 8000, just like Django normally would.
 
 ---
 
 ## 🔧 Options
 
-You can run the regular Django dev server too (but qdds is a silly way to do it):
-
-```bash
-devserver --regular
-```
+- `--safe` — Run on port 8000 instead of 80 (for systems that restrict port binding).
+- `--regular` — Skip IP detection and just run on localhost (Django default behavior).
 
 ---
 

@@ -1,6 +1,6 @@
 [project]
 name = "qdds"
-version = "1.2.0"
+version = "1.2.1"
 description = "Quick Django Dev Server shortcut using your IP and port 8000"
 readme = "README.md"
 requires-python = ">=3.8"
