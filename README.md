@@ -20,6 +20,8 @@ By default, it runs on **port 80**, so other devices on your network can just en
 
 If that fails due to permissions or port binding restrictions, you can pass `--safe` to fall back to Django's default port 8000.
 
+![screenshot.png](screenshot.png)
+
 ---
 
 ## 🛠 Installation
