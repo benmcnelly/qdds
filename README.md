@@ -16,9 +16,9 @@
 
 **qdds** (`devserver`) is a small CLI tool that runs your Django project's dev server using your local network IP, making it accessible to other devices on your Wi-Fi. Great for testing on mobile or with a team.
 
-By default, it runs on **port 80**, so other devices on your network can just enter your IP address (like `http://192.168.1.50`) without needing a port number. 🔥
+By default, it tries to bind to **port 80**, so other devices on your network can just enter your IP address (like `http://192.168.1.50`) without needing a port number. 🔥
 
-If that fails due to permissions or port binding restrictions, you can pass `--safe` to fall back to Django's default port 8000.
+If port 80 cannot be bound (due to permissions or port binding restrictions), it will automatically fall back to Django's default port **8000** so you don't have to think about it.
 
 ![screenshot.png](screenshot.png)
 
@@ -40,28 +40,22 @@ Inside your Django project folder (where `manage.py` lives):
 devserver
 ```
 
-This runs:
+This attempts to run:
 
 ```bash
 python manage.py runserver 0.0.0.0:80
 ```
 
-That means devices on your Wi-Fi can hit `http://<your-ip>` with no port required.
-
-If you get a permission error or want to play it safe:
-
-```bash
-devserver --safe
-```
-
-This runs it on port 8000, just like Django normally would.
+That means devices on your Wi-Fi can hit `http://<your-ip>` with no port required. If port 80 is restricted, it seamlessly uses port 8000 instead.
 
 ---
 
 ## 🔧 Options
 
-- `--safe` — Run on port 8000 instead of 80 (for systems that restrict port binding).
-- `--regular` — Skip IP detection and just run on localhost (Django default behavior).
+- `--port <number>` — Explicitly set the port you want to use.
+- `--localhost` — Run on localhost only instead of exposing to your local network (similar to default `manage.py runserver`).
+- `--no-browser` — Start the server without automatically opening your browser.
+- `--safe` — Legacy option to force port 8000 immediately.
 
 ---
 
